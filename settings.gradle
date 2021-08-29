@@ -1,0 +1,2 @@
+rootProject.name = "Sudo Hacks Android"
+include ':app'
