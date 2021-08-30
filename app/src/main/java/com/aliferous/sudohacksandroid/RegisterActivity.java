@@ -7,16 +7,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class RegisterActivity extends AppCompatActivity {
 
     Button Next1,Next2,Next3,Next4,Next5;
     ConstraintLayout Page1,Page2,Page3,Page4,Page5;
+    TextView SignIn;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -30,11 +34,21 @@ public class RegisterActivity extends AppCompatActivity {
         Next4 = findViewById(R.id.page4_next);
         Next5 = findViewById(R.id.page5_next);
 
+        SignIn = findViewById(R.id.register_SignIn);
+
         Page1 = findViewById(R.id.register_page1);
         Page2 = findViewById(R.id.register_page2);
         Page3 = findViewById(R.id.register_page3);
         Page4 = findViewById(R.id.register_page4);
         Page5 = findViewById(R.id.register_page5);
+
+        SignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         Page1.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
@@ -136,10 +150,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page2.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page1, "translationX", 0f, -1200f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page2, "translationX", 1200f, 0f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -154,10 +168,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page3.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page2, "translationX", 0f, -1200f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page3, "translationX", 1200f, 0f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -172,10 +186,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page4.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page3, "translationX", 0f, -1200f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page4, "translationX", 1200f, 0f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -190,10 +204,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page5.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page4, "translationX", 0f, -1200f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page5, "translationX", 1200f, 0f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -209,10 +223,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page1.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page1, "translationX", -1200f, 0f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page2, "translationX", 0f, 1200f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -227,10 +241,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page2.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page2, "translationX", -1200f, 0f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page3, "translationX", 0f, 1200f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -245,10 +259,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page3.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page3, "translationX", -1200f, 0f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page4, "translationX", 0f, 1200f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -263,10 +277,10 @@ public class RegisterActivity extends AppCompatActivity {
         Page4.setVisibility(View.VISIBLE);
         final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page4, "translationX", -1200f, 0f);
         final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page5, "translationX", 0f, 1200f);
-        oa1.setDuration(450);
-        oa2.setDuration(450);
-        oa1.setInterpolator(new AccelerateInterpolator());
-        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.setDuration(250);
+        oa2.setDuration(250);
+        oa1.setInterpolator(new AccelerateDecelerateInterpolator());
+        oa2.setInterpolator(new AccelerateDecelerateInterpolator());
         oa1.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {

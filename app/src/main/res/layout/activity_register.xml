@@ -69,10 +69,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/register_page1"
-        android:visibility="visible"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,560 +79,568 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.30">
 
-        <EditText
-            android:id="@+id/register_FullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Full Name"
-            android:paddingStart="20dp"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/register_Phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Phone Number"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:inputType="phone"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_FullName" />
-
-        <EditText
-            android:id="@+id/register_Email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Email Address"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:inputType="textEmailAddress"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Phone" />
-
-        <LinearLayout
-            android:id="@+id/linearlayout1"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/register_page1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Email" >
+            app:layout_constraintVertical_bias="0.30">
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_FullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pageselected" />
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Full Name"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_Phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_FullName" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_Email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Phone" />
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearlayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Email">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pageselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/page1_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="12dp"
+                android:background="@drawable/vector_buttonbg"
+                android:fontFamily="@font/helveticaneue"
+                android:text="NEXT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout1" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/page1_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_buttonbg"
-            android:text="NEXT"
-            android:fontFamily="@font/helveticaneue"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:layout_margin="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout1" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/register_page2"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.30">
-
-        <Spinner
-            android:id="@+id/register_BloodGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:paddingStart="20dp"
-            android:entries="@array/Blood_Group"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/register_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Age"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:inputType="number"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_BloodGroup" />
-
-        <Spinner
-            android:id="@+id/register_Gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:entries="@array/Gender"
-            android:fontFamily="@font/helveticaneue"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_age" />
-
-        <LinearLayout
-            android:id="@+id/linearlayout2"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/register_page2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Gender" >
+            app:layout_constraintVertical_bias="0.30">
 
-            <ImageView
+            <Spinner
+                android:id="@+id/register_BloodGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:background="@drawable/vector_edittext"
+                android:entries="@array/Blood_Group"
+                android:fontFamily="@font/helveticaneue"
+                android:paddingStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pageselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Age"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_BloodGroup" />
 
-            <ImageView
+            <Spinner
+                android:id="@+id/register_Gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:entries="@array/Gender"
+                android:fontFamily="@font/helveticaneue"
+                android:paddingStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_age" />
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearlayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Gender">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pageselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/page2_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="12dp"
+                android:background="@drawable/vector_buttonbg"
+                android:fontFamily="@font/helveticaneue"
+                android:text="NEXT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout2" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/page2_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_buttonbg"
-            android:text="NEXT"
-            android:fontFamily="@font/helveticaneue"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:layout_margin="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout2" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/register_page3"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.30">
-
-        <Spinner
-            android:id="@+id/register_CovidPositive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:paddingStart="20dp"
-            android:entries="@array/CovidPositive"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Spinner
-            android:id="@+id/register_CovidRecovered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:paddingStart="20dp"
-            android:layout_margin="20dp"
-            android:entries="@array/CovidRecovered"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/register_CovidPositive" />
-
-        <Spinner
-            android:id="@+id/register_CovidFree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:paddingStart="20dp"
-            android:layout_margin="20dp"
-            android:entries="@array/CovidFree"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/register_CovidRecovered" />
-
-        <LinearLayout
-            android:id="@+id/linearlayout3"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/register_page3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_CovidFree" >
+            app:layout_constraintVertical_bias="0.30">
 
-            <ImageView
+            <Spinner
+                android:id="@+id/register_CovidPositive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:background="@drawable/vector_edittext"
+                android:entries="@array/CovidPositive"
+                android:fontFamily="@font/helveticaneue"
+                android:paddingStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <Spinner
+                android:id="@+id/register_CovidRecovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:entries="@array/CovidRecovered"
+                android:fontFamily="@font/helveticaneue"
+                android:paddingStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_CovidPositive" />
 
-            <ImageView
+            <Spinner
+                android:id="@+id/register_CovidFree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pageselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:entries="@array/CovidFree"
+                android:fontFamily="@font/helveticaneue"
+                android:paddingStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_CovidRecovered" />
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearlayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_CovidFree">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pageselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/page3_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="12dp"
+                android:background="@drawable/vector_buttonbg"
+                android:fontFamily="@font/helveticaneue"
+                android:text="NEXT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout3" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/page3_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_buttonbg"
-            android:text="NEXT"
-            android:fontFamily="@font/helveticaneue"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:layout_margin="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout3" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/register_page4"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.30">
-
-        <EditText
-            android:id="@+id/register_Locality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Locality"
-            android:paddingStart="20dp"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/register_City"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="City"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Locality" />
-
-        <EditText
-            android:id="@+id/register_State"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="State"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_City" />
-
-        <LinearLayout
-            android:id="@+id/linearlayout4"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/register_page4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_State" >
+            app:layout_constraintVertical_bias="0.30">
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_Locality"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Locality"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_City"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="City"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Locality" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_State"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="State"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_City" />
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearlayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_State">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pageselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/page4_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pageselected" />
+                android:layout_margin="12dp"
+                android:background="@drawable/vector_buttonbg"
+                android:fontFamily="@font/helveticaneue"
+                android:text="NEXT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout4" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/page4_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_buttonbg"
-            android:text="NEXT"
-            android:fontFamily="@font/helveticaneue"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:layout_margin="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout4" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/register_page5"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.30">
-
-        <EditText
-            android:id="@+id/register_Pincode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Pincode"
-            android:inputType="number"
-            android:paddingStart="20dp"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/register_Password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Pincode" />
-
-        <EditText
-            android:id="@+id/register_CPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/vector_edittext"
-            android:fontFamily="@font/helveticaneue"
-            android:hint="Confirm Password"
-            android:textColor="#454545"
-            android:textColorHint="#454545"
-            android:paddingStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_Password" />
-
-        <LinearLayout
-            android:id="@+id/linearlayout5"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/register_page5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_CPassword" >
+            app:layout_constraintVertical_bias="0.30">
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_Pincode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Pincode"
+                android:inputType="number"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_Password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Pincode" />
 
-            <ImageView
+            <EditText
+                android:id="@+id/register_CPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="20dp"
+                android:background="@drawable/vector_edittext"
+                android:fontFamily="@font/helveticaneue"
+                android:hint="Confirm Password"
+                android:paddingStart="20dp"
+                android:textColor="#454545"
+                android:textColorHint="#454545"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_Password" />
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearlayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_CPassword">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pagenotselected" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/vector_pageselected" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/page5_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pagenotselected" />
+                android:layout_margin="12dp"
+                android:background="@drawable/vector_buttonbg"
+                android:fontFamily="@font/helveticaneue"
+                android:text="SUBMIT"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout5" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/vector_pageselected" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </RelativeLayout>
 
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/page5_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vector_buttonbg"
-            android:text="SUBMIT"
-            android:fontFamily="@font/helveticaneue"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:layout_margin="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearlayout5" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/textView4"
@@ -647,7 +654,7 @@
         android:fontFamily="@font/helveticaneue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_page1" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <TextView
         android:id="@+id/register_SignIn"
@@ -659,7 +666,7 @@
         android:textColor="#454545"
         android:fontFamily="@font/helveticaneuebold"
         app:layout_constraintStart_toEndOf="@id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/register_page1" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -682,7 +689,8 @@
             android:id="@+id/aliferouslogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/aliferouslogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
