@@ -34,6 +34,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#454545"
         android:fontFamily="@font/helveticaneueitalic"
         android:padding="5dp"
         android:text="RUN TO EMPOWER DONATIONS"
@@ -57,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/helveticaneue"
+        android:textColor="#757575"
         android:paddingStart="40dp"
         android:paddingTop="30dp"
         android:paddingEnd="40dp"
@@ -68,6 +70,8 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/register_page1"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,6 +88,8 @@
             android:fontFamily="@font/helveticaneue"
             android:hint="Full Name"
             android:paddingStart="20dp"
+            android:textColor="#454545"
+            android:textColorHint="#454545"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -96,6 +102,9 @@
             android:background="@drawable/vector_edittext"
             android:fontFamily="@font/helveticaneue"
             android:hint="Phone Number"
+            android:textColor="#454545"
+            android:textColorHint="#454545"
+            android:inputType="phone"
             android:paddingStart="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,11 +118,122 @@
             android:background="@drawable/vector_edittext"
             android:fontFamily="@font/helveticaneue"
             android:hint="Email Address"
+            android:textColor="#454545"
+            android:textColorHint="#454545"
+            android:inputType="textEmailAddress"
             android:paddingStart="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register_Phone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/register_page2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.30">
+
+        <Spinner
+            android:id="@+id/register_BloodGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_edittext"
+            android:fontFamily="@font/helveticaneue"
+            android:paddingStart="20dp"
+            android:entries="@array/Blood_Group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/register_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/vector_edittext"
+            android:fontFamily="@font/helveticaneue"
+            android:hint="Age"
+            android:textColor="#454545"
+            android:textColorHint="#454545"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_BloodGroup" />
+
+        <Spinner
+            android:id="@+id/register_Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/vector_edittext"
+            android:entries="@array/Gender"
+            android:fontFamily="@font/helveticaneue"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_age" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/register_page3"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.30">
+
+        <Spinner
+            android:id="@+id/register_CovidPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_edittext"
+            android:fontFamily="@font/helveticaneue"
+            android:paddingStart="20dp"
+            android:entries="@array/CovidPositive"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/register_CovidRecovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_edittext"
+            android:fontFamily="@font/helveticaneue"
+            android:paddingStart="20dp"
+            android:layout_margin="20dp"
+            android:entries="@array/CovidRecovered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_CovidPositive" />
+
+        <Spinner
+            android:id="@+id/register_CovidFree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_edittext"
+            android:fontFamily="@font/helveticaneue"
+            android:paddingStart="20dp"
+            android:layout_margin="20dp"
+            android:entries="@array/CovidFree"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_CovidRecovered" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

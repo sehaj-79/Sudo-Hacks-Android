@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">Sudo Hacks Android</string>
+
+    <string-array name="Blood_Group">
+        <item>Blood Group</item>
+        <item>A+</item>
+        <item>B+</item>
+        <item>AB+</item>
+        <item>O+</item>
+        <item>A-</item>
+        <item>B-</item>
+        <item>AB-</item>
+        <item>O-</item>
+    </string-array>
+
+    <string-array name="Gender">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="CovidRecovered">
+        <item>Covid Recovered</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="CovidPositive">
+        <item>Covid Positive</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="CovidFree">
+        <item>Covid Free</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
 </resources>
