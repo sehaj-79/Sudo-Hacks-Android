@@ -20,8 +20,8 @@ import static android.content.ContentValues.TAG;
 
 public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.ViewHolder>{
 
-    private Context mContext;
-    private List<User> mUsers;
+    private final Context mContext;
+    private final List<User> mUsers;
 
 
     public BloodDonorAdapter(Context mContext, List<User> mUsers, boolean b) {

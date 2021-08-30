@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +40,7 @@ public class BloodActivity extends AppCompatActivity {
     private BloodDonorAdapter userAdapter;
     private List<User> mUsers;
 
+    FirebaseUser firebaseUser;
 
 
 
@@ -49,21 +52,20 @@ public class BloodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blood);
 
-
-
-        locality = findViewById(R.id.locality);
         recyclerView = findViewById(R.id.blood_donor_recycler_view);
+
+        /*locality = findViewById(R.id.locality);
         pincode = findViewById(R.id.pincode);
         gender = findViewById(R.id.gender);
         age = findViewById(R.id.age);
-        bloodgroup = findViewById(R.id.bloodgroup);
+        bloodgroup = findViewById(R.id.bloodgroup);*/
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users");
 
-
-
-        reference.addValueEventListener(new ValueEventListener() {
+        /*reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
@@ -79,7 +81,7 @@ public class BloodActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
 
         recyclerView.setHasFixedSize(true);
