@@ -3,6 +3,7 @@ package com.aliferous.sudohacksandroid;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button Next1,Next2,Next3,Next4,Next5;
     ConstraintLayout Page1,Page2,Page3,Page4,Page5;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,71 @@ public class RegisterActivity extends AppCompatActivity {
         Page3 = findViewById(R.id.register_page3);
         Page4 = findViewById(R.id.register_page4);
         Page5 = findViewById(R.id.register_page5);
+
+
+        Page1.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Page1_Next();
+            }
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+            }
+        });
+
+        Page2.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Page2_Next();
+
+            }
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Page2_Back();
+            }
+        });
+
+        Page3.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Page3_Next();
+            }
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Page3_Back();
+            }
+        });
+
+        Page4.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Page4_Next();
+            }
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Page4_Back();
+            }
+        });
+
+        Page5.setOnTouchListener(new OnSwipeTouchListener(RegisterActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+            }
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Page5_Back();
+            }
+        });
 
 
         Next1.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +142,23 @@ public class RegisterActivity extends AppCompatActivity {
     public void Page4_Next(){
         Page4.setVisibility(View.GONE);
         Page5.setVisibility(View.VISIBLE);
+    }
+
+    public void Page2_Back(){
+        Page2.setVisibility(View.GONE);
+        Page1.setVisibility(View.VISIBLE);
+    }
+    public void Page3_Back(){
+        Page3.setVisibility(View.GONE);
+        Page2.setVisibility(View.VISIBLE);
+    }
+    public void Page4_Back(){
+        Page4.setVisibility(View.GONE);
+        Page3.setVisibility(View.VISIBLE);
+    }
+    public void Page5_Back(){
+        Page5.setVisibility(View.GONE);
+        Page4.setVisibility(View.VISIBLE);
     }
 
 }
