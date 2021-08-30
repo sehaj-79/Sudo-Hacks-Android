@@ -100,7 +100,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Start_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/vector_buttonbg"
@@ -118,7 +118,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="40dp"
         android:fontFamily="@font/helveticaneue"
         android:text="New User?"
         android:textColor="#454545"
@@ -126,19 +126,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/Start_Login" />
 
     <TextView
-        android:id="@+id/login_SignUp"
+        android:id="@+id/Start_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="7dp"
         android:text="Sign Up"
         android:textSize="14dp"
         android:textColor="#454545"
         android:fontFamily="@font/helveticaneuebold"
         app:layout_constraintStart_toEndOf="@id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/Start_Login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
