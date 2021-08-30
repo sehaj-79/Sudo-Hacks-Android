@@ -18,13 +18,13 @@ import Model.User;
 
 import static android.content.ContentValues.TAG;
 
-public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.ViewHolder>{
+public class PlasmaDonorAdapter extends RecyclerView.Adapter<PlasmaDonorAdapter.ViewHolder>{
 
     private final Context mContext;
     private final List<User> mUsers;
 
 
-    public BloodDonorAdapter(Context mContext, List<User> mUsers, boolean b) {
+    public PlasmaDonorAdapter(Context mContext, List<User> mUsers, boolean b) {
         this.mUsers = mUsers;
         this.mContext = mContext;
     }
@@ -32,8 +32,8 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.blood_donor_item,parent,false);
-        return new BloodDonorAdapter.ViewHolder(view);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.plasma_donor_item,parent,false);
+        return new PlasmaDonorAdapter.ViewHolder(view);
     }
 
     @Override
@@ -41,11 +41,11 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Vi
 
         final User user = mUsers.get(position);
         Log.i(TAG, "onBindViewHolder: "+position);
-        holder.bd_age.setText("Age: "+user.getAge());
-        holder.bd_locality.setText("Locality: "+user.getLocality());
-        holder.bd_pincode.setText("Pincode: "+user.getPin());
-        holder.bd_gender.setText("Gender: "+user.getGender());
-        holder.bd_bloodgroup.setText("Blood Group: "+user.getBlood());
+        holder.pd_age.setText("Age: "+user.getAge());
+        holder.pd_locality.setText("Locality: "+user.getLocality());
+        holder.pd_pincode.setText("Pincode: "+user.getPin());
+        holder.pd_gender.setText("Gender: "+user.getGender());
+        holder.pd_bloodgroup.setText("Blood Group: "+user.getBlood());
 
 
 
@@ -53,16 +53,16 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Vi
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView bd_age,bd_locality,bd_pincode,bd_gender,bd_bloodgroup;
+        public TextView pd_age,pd_locality,pd_pincode,pd_gender,pd_bloodgroup;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            bd_age = itemView.findViewById(R.id.bd_item_age);
-            bd_locality = itemView.findViewById(R.id.bd_item_locality);
-            bd_pincode = itemView.findViewById(R.id.bd_item_pincode);
-            bd_gender = itemView.findViewById(R.id.bd_item_gender);
-            bd_bloodgroup = itemView.findViewById(R.id.bd_item_bloodgroup);
+            pd_age = itemView.findViewById(R.id.pd_item_age);
+            pd_locality = itemView.findViewById(R.id.pd_item_locality);
+            pd_pincode = itemView.findViewById(R.id.pd_item_pincode);
+            pd_gender = itemView.findViewById(R.id.pd_item_gender);
+            pd_bloodgroup = itemView.findViewById(R.id.pd_item_bloodgroup);
 
         }
     }

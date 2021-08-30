@@ -2,6 +2,7 @@ package com.aliferous.sudohacksandroid;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,7 @@ import static java.security.AccessController.getContext;
 
 public class BloodActivity extends AppCompatActivity {
 
-    TextView locality,pincode,gender,age,bloodgroup,test;
+    TextView locality,pincode,gender,age,bloodgroup;
 
     DatabaseReference reference;
 
@@ -55,7 +56,7 @@ public class BloodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blood);
 
         recyclerView = findViewById(R.id.blood_donor_recycler_view);
-        test = findViewById(R.id.text_test);
+        locality = findViewById(R.id.blood_donor_location);
 
         /*locality = findViewById(R.id.locality);
         pincode = findViewById(R.id.pincode);
@@ -73,7 +74,7 @@ public class BloodActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-                test.setText(user.getLocality());
+                locality.setText(user.getLocality());
             }
 
             @Override
@@ -84,7 +85,8 @@ public class BloodActivity extends AppCompatActivity {
 
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(BloodActivity.this));
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(mLayoutManager);
 
         mUsers = new ArrayList<>();
 
