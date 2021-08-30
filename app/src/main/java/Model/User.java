@@ -1,17 +1,18 @@
 package Model;
 
-public class User { private String username, gender,email,bloodgroup,locality,city,state,pincode, age;
+public class User { private String username, gender,email,blood,locality,city,state,pin, age,id;
 
-    public User(String username, String gender, String email, String bloodgroup, String locality, String city, String state, String pincode, String age) {
+    public User(String username, String gender, String email, String blood, String locality, String city, String state, String pin, String age, String id) {
         this.username = username;
         this.gender = gender;
         this.email = email;
-        this.bloodgroup = bloodgroup;
+        this.blood = blood;
         this.locality = locality;
         this.city = city;
         this.state = state;
-        this.pincode = pincode;
+        this.pin = pin;
         this.age = age;
+        this.id = id;
 
     }
 
@@ -41,12 +42,12 @@ public class User { private String username, gender,email,bloodgroup,locality,ci
         this.email = email;
     }
 
-    public String getBloodgroup() {
-        return bloodgroup;
+    public String getBlood() {
+        return blood;
     }
 
-    public void setBloodgroup(String bloodgroup) {
-        this.bloodgroup = bloodgroup;
+    public void setBlood(String blood) {
+        this.blood = blood;
     }
 
     public String getLocality() {
@@ -73,12 +74,12 @@ public class User { private String username, gender,email,bloodgroup,locality,ci
         this.state = state;
     }
 
-    public String getPincode() {
-        return pincode;
+    public String getPin() {
+        return pin;
     }
 
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
+    public void setPin(String pin) {
+        this.pin = pin;
     }
 
     public String getAge() {
@@ -87,5 +88,13 @@ public class User { private String username, gender,email,bloodgroup,locality,ci
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

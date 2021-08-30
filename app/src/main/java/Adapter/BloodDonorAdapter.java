@@ -43,9 +43,9 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Vi
         Log.i(TAG, "onBindViewHolder: "+position);
         holder.bd_age.setText(user.getAge());
         holder.bd_locality.setText(user.getLocality());
-        holder.bd_pincode.setText(user.getPincode());
+        holder.bd_pincode.setText(user.getPin());
         holder.bd_gender.setText(user.getGender());
-        holder.bd_bloodgroup.setText(user.getBloodgroup());
+        holder.bd_bloodgroup.setText(user.getBlood());
 
 
 

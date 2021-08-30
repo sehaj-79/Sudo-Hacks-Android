@@ -26,6 +26,8 @@ public class HomeActivity extends AppCompatActivity {
     Button logout,donate,profile,chats,feedback,plasma_donation,blood_donation;
     String txt;
 
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {

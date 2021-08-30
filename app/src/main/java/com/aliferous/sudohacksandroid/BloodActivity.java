@@ -29,15 +29,17 @@ import java.util.List;
 import Adapter.BloodDonorAdapter;
 import Model.User;
 
+import static java.security.AccessController.getContext;
+
 public class BloodActivity extends AppCompatActivity {
 
-    TextView locality,pincode,gender,age,bloodgroup;
+    TextView locality,pincode,gender,age,bloodgroup,test;
 
     DatabaseReference reference;
 
     private RecyclerView recyclerView;
 
-    private BloodDonorAdapter userAdapter;
+    private BloodDonorAdapter bloodDonorAdapter;
     private List<User> mUsers;
 
     FirebaseUser firebaseUser;
@@ -53,6 +55,7 @@ public class BloodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blood);
 
         recyclerView = findViewById(R.id.blood_donor_recycler_view);
+        test = findViewById(R.id.text_test);
 
         /*locality = findViewById(R.id.locality);
         pincode = findViewById(R.id.pincode);
@@ -65,23 +68,19 @@ public class BloodActivity extends AppCompatActivity {
 
 
 
-        /*reference.addValueEventListener(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-                locality.setText(user.getLocality());
-                pincode.setText(user.getPincode());
-                gender.setText(user.getGender());
-                age.setText(user.getAge());
-                bloodgroup.setText(user.getBloodgroup());
+                test.setText(user.getLocality());
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });*/
+        });
 
 
         recyclerView.setHasFixedSize(true);
@@ -97,29 +96,29 @@ public class BloodActivity extends AppCompatActivity {
 
     private void readUsers() {
 
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    mUsers.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         User user = snapshot.getValue(User.class);
 
-
-                        if (user!=null && user.getUsername() != null ) {
-                            mUsers.add(user);
+                        if (user != null && user.getId() != null) {
+                            assert firebaseUser != null;
+                            if (!user.getId().equals(firebaseUser.getUid())) {
+                                mUsers.add(user);
+                            }
                         }
-
 
                     }
 
-                    userAdapter = new BloodDonorAdapter(BloodActivity.this, mUsers, false);
-                    recyclerView.setAdapter(userAdapter);
+                    bloodDonorAdapter = new BloodDonorAdapter(BloodActivity.this, mUsers, false);
+                    recyclerView.setAdapter(bloodDonorAdapter);
 
             }
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
