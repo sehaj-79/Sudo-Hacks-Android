@@ -40,67 +40,67 @@ public class HomeActivity extends AppCompatActivity {
         feedback = findViewById(R.id.home_feedback);
         plasma_donation = findViewById(R.id.home_plasma_donation);
         blood_donation = findViewById(R.id.home_blood_donation);*/
-
-
-        blood_donation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, BloodActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        plasma_donation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, PlasmaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        donate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, DonateActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        feedback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, FeedbackActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        chats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, ChatsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Paper.book().destroy();
-
-                Intent intent = new Intent(HomeActivity.this, StartActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
-            }
-        });
+//
+//
+//        blood_donation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, BloodActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        plasma_donation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, PlasmaActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        donate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, DonateActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        profile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        feedback.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, FeedbackActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        chats.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, ChatsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Paper.book().destroy();
+//
+//                Intent intent = new Intent(HomeActivity.this, StartActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
 
 
     }

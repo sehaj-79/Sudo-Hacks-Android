@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/vector_rectanglehome"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -90,6 +91,164 @@
         android:background="@drawable/vector_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <ImageView
+            android:id="@+id/circle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/vector_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/circle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/vector_circle"
+            app:layout_constraintStart_toEndOf="@id/circle1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/circle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/vector_circle"
+            app:layout_constraintStart_toEndOf="@id/circle2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/circle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/vector_circle"
+            app:layout_constraintStart_toEndOf="@id/circle3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donate To \nUs"
+            android:gravity="center"
+            android:fontFamily="@font/helveticaneue"
+            android:textSize="12dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/circle1"
+            app:layout_constraintStart_toStartOf="@+id/circle1"
+            app:layout_constraintTop_toBottomOf="@+id/circle1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:fontFamily="@font/helveticaneue"
+            android:textSize="12dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/circle2"
+            app:layout_constraintStart_toStartOf="@+id/circle2"
+            app:layout_constraintTop_toBottomOf="@+id/circle2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            android:fontFamily="@font/helveticaneue"
+            android:textSize="12dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/circle3"
+            app:layout_constraintStart_toStartOf="@+id/circle3"
+            app:layout_constraintTop_toBottomOf="@+id/circle3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:fontFamily="@font/helveticaneue"
+            android:textSize="12dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/circle4"
+            app:layout_constraintStart_toStartOf="@+id/circle4"
+            app:layout_constraintTop_toBottomOf="@+id/circle4" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_donation"
+            app:layout_constraintBottom_toBottomOf="@+id/circle1"
+            app:layout_constraintEnd_toEndOf="@+id/circle1"
+            app:layout_constraintStart_toStartOf="@+id/circle1"
+            app:layout_constraintTop_toTopOf="@+id/circle1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_profile"
+            app:layout_constraintBottom_toBottomOf="@+id/circle2"
+            app:layout_constraintEnd_toEndOf="@+id/circle2"
+            app:layout_constraintStart_toStartOf="@+id/circle2"
+            app:layout_constraintTop_toTopOf="@+id/circle2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_chats"
+            app:layout_constraintBottom_toBottomOf="@+id/circle3"
+            app:layout_constraintEnd_toEndOf="@+id/circle3"
+            app:layout_constraintStart_toStartOf="@+id/circle3"
+            app:layout_constraintTop_toTopOf="@+id/circle3" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vector_feedback"
+            app:layout_constraintBottom_toBottomOf="@+id/circle4"
+            app:layout_constraintEnd_toEndOf="@+id/circle4"
+            app:layout_constraintStart_toStartOf="@+id/circle4"
+            app:layout_constraintTop_toTopOf="@+id/circle4" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#454545"
+            android:textSize="14dp"
+            android:fontFamily="@font/helveticaneuebold"
+            android:text="Powered By Aliferous"
+            android:layout_margin="4dp"
+            app:layout_constraintEnd_toStartOf="@id/aliferouslogo"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/aliferouslogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/aliferouslogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
