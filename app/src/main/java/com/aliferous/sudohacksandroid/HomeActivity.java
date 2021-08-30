@@ -33,6 +33,24 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
+        plasma_donation = findViewById(R.id.PlasmaDonationPortal);
+        blood_donation = findViewById(R.id.bloodDonationPortal);
+
+        plasma_donation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        blood_donation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
+
         /*logout = findViewById(R.id.home_logout);
         donate = findViewById(R.id.home_donate);
         profile = findViewById(R.id.home_profile);
