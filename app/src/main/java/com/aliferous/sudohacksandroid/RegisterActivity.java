@@ -3,9 +3,14 @@ package com.aliferous.sudohacksandroid;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -128,37 +133,149 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void Page1_Next(){
-        Page1.setVisibility(View.GONE);
         Page2.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page1, "translationX", 0f, -1200f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page2, "translationX", 1200f, 0f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page1.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page2_Next(){
-        Page2.setVisibility(View.GONE);
         Page3.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page2, "translationX", 0f, -1200f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page3, "translationX", 1200f, 0f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page2.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page3_Next(){
-        Page3.setVisibility(View.GONE);
         Page4.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page3, "translationX", 0f, -1200f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page4, "translationX", 1200f, 0f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page3.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page4_Next(){
-        Page4.setVisibility(View.GONE);
         Page5.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page4, "translationX", 0f, -1200f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page5, "translationX", 1200f, 0f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page4.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
 
     public void Page2_Back(){
-        Page2.setVisibility(View.GONE);
         Page1.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page1, "translationX", -1200f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page2, "translationX", 0f, 1200f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page2.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page3_Back(){
-        Page3.setVisibility(View.GONE);
         Page2.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page2, "translationX", -1200f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page3, "translationX", 0f, 1200f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page3.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page4_Back(){
-        Page4.setVisibility(View.GONE);
         Page3.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page3, "translationX", -1200f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page4, "translationX", 0f, 1200f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page4.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
     public void Page5_Back(){
-        Page5.setVisibility(View.GONE);
         Page4.setVisibility(View.VISIBLE);
+        final ObjectAnimator oa1 = ObjectAnimator.ofFloat(Page4, "translationX", -1200f, 0f);
+        final ObjectAnimator oa2 = ObjectAnimator.ofFloat(Page5, "translationX", 0f, 1200f);
+        oa1.setDuration(450);
+        oa2.setDuration(450);
+        oa1.setInterpolator(new AccelerateInterpolator());
+        oa2.setInterpolator(new AccelerateInterpolator());
+        oa1.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                Page5.setVisibility(View.GONE);
+            }
+        });
+        oa1.start();
+        oa2.start();
     }
 
 }
