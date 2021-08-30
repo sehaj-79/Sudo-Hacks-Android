@@ -39,14 +39,16 @@ public class HomeActivity extends AppCompatActivity {
         plasma_donation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivity.this, PlasmaActivity.class);
+                startActivity(intent);
             }
         });
 
         blood_donation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent intent = new Intent(HomeActivity.this, BloodActivity.class);
+                startActivity(intent);
             }
         });
 
