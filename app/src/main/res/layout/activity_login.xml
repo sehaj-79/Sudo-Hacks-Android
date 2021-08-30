@@ -102,7 +102,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/vector_edittext"
             android:fontFamily="@font/helveticaneue"
-            android:hint="Phone Number"
+            android:hint="Password"
             android:textColor="#454545"
             android:textColorHint="#454545"
             android:inputType="textPassword"
