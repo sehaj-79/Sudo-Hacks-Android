@@ -33,13 +33,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        /*logout = findViewById(R.id.logout);
-        donate = findViewById(R.id.donate);
-        profile = findViewById(R.id.profile);
-        chats = findViewById(R.id.chats);
-        feedback = findViewById(R.id.feedback);
-        plasma_donation = findViewById(R.id.plasma_donation);
-        blood_donation = findViewById(R.id.blood_donation);*/
+        /*logout = findViewById(R.id.home_logout);
+        donate = findViewById(R.id.home_donate);
+        profile = findViewById(R.id.home_profile);
+        chats = findViewById(R.id.home_chats);
+        feedback = findViewById(R.id.home_feedback);
+        plasma_donation = findViewById(R.id.home_plasma_donation);
+        blood_donation = findViewById(R.id.home_blood_donation);*/
 
 
         blood_donation.setOnClickListener(new View.OnClickListener() {
