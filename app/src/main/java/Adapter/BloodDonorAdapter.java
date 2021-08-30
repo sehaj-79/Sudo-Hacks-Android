@@ -1,6 +1,7 @@
 package Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aliferous.sudohacksandroid.MessageActivity;
 import com.aliferous.sudohacksandroid.R;
 
 import java.util.List;
@@ -47,6 +49,15 @@ public class BloodDonorAdapter extends RecyclerView.Adapter<BloodDonorAdapter.Vi
         holder.bd_gender.setText("Gender: "+user.getGender());
         holder.bd_bloodgroup.setText("Blood Group: "+user.getBlood());
 
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, MessageActivity.class);
+                intent.putExtra("userid", user.getId());
+                mContext.startActivity(intent);
+            }
+        });
 
 
 

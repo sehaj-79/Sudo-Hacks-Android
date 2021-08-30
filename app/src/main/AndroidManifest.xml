@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SudoHacksAndroid">
-        <activity android:name=".DonateActivity"></activity>
+        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".DonateActivity" />
         <activity android:name=".ChatsActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".ProfileActivity" />
