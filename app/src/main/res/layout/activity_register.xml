@@ -635,6 +635,32 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Already a User?"
+        android:textSize="14dp"
+        app:layout_constraintHorizontal_bias="0.4"
+        android:textColor="#454545"
+        android:fontFamily="@font/helveticaneue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_page1" />
+
+    <TextView
+        android:id="@+id/register_SignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Sign In"
+        android:textSize="14dp"
+        android:textColor="#454545"
+        android:fontFamily="@font/helveticaneuebold"
+        app:layout_constraintStart_toEndOf="@id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/register_page1" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
