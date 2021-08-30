@@ -104,7 +104,7 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-                username1.setText(user.getUsername());
+                username1.setText(user.getName());
                 profile_image1.setImageResource(R.drawable.ic_person);
                 readMesagges(fuser.getUid(), userid, user.getGender());
             }

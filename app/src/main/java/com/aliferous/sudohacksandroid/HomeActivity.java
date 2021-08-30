@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -23,7 +24,8 @@ import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button logout,donate,profile,chats,feedback,plasma_donation,blood_donation;
+    Button plasma_donation,blood_donation;
+    ImageView logout,donate,profile,feedback,chats;
     String txt;
 
 
@@ -37,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
         plasma_donation = findViewById(R.id.PlasmaDonationPortal);
         blood_donation = findViewById(R.id.bloodDonationPortal);
+        chats = findViewById(R.id.circle3);
 
         plasma_donation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +56,14 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        chats.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent intent = new Intent(HomeActivity.this, ChatsActivity.class);
+                  startActivity(intent);
+              }
+          });
 
 
         /*logout = findViewById(R.id.home_logout);

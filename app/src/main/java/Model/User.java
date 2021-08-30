@@ -1,9 +1,9 @@
 package Model;
 
-public class User { private String username, gender,email,blood,locality,city,state,pin, age,id;
+public class User { private String name, gender,email,blood,locality,city,state,pin, age,id;
 
-    public User(String username, String gender, String email, String blood, String locality, String city, String state, String pin, String age, String id) {
-        this.username = username;
+    public User(String name, String gender, String email, String blood, String locality, String city, String state, String pin, String age, String id) {
+        this.name = name;
         this.gender = gender;
         this.email = email;
         this.blood = blood;
@@ -18,12 +18,12 @@ public class User { private String username, gender,email,blood,locality,city,st
 
     public User() {}
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getGender() {
