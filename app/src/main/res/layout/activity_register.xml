@@ -570,6 +570,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:inputType="textPassword"
                 android:background="@drawable/vector_edittext"
                 android:fontFamily="@font/helveticaneue"
                 android:hint="Confirm Password"

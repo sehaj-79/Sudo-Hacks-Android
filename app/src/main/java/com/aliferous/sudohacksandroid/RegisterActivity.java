@@ -119,16 +119,18 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String txt_username = InputName.getText().toString();
                 String txt_email = InputEmail.getText().toString();
+                String txt_phone = InputPhoneNumber.getText().toString();
                 String txt_password = InputPassword.getText().toString();
                 String txt_cpassword = InputConfirmPass.getText().toString();
-                String txt_Locality = InputPassword.getText().toString();
-                String txt_City = InputPassword.getText().toString();
-                String txt_Pincode = InputPassword.getText().toString();
-                String txt_Age = InputPassword.getText().toString();
+                String txt_Locality = InputLocality.getText().toString();
+                String txt_City = InputCity.getText().toString();
+                String txt_State = InputState.getText().toString();
+                String txt_Pincode = InputPin.getText().toString();
+                String txt_Age = InputAge.getText().toString();
 
 
 
-                if(TextUtils.isEmpty(txt_username)  ||  TextUtils.isEmpty(txt_password)  ||  TextUtils.isEmpty(txt_email)){
+                if(TextUtils.isEmpty(txt_username)  ||  TextUtils.isEmpty(txt_password)  ||  TextUtils.isEmpty(txt_email)  ||  TextUtils.isEmpty(txt_phone)  ||  TextUtils.isEmpty(txt_Locality)  ||  TextUtils.isEmpty(txt_City)   ||  TextUtils.isEmpty(txt_Pincode)  ||  TextUtils.isEmpty(txt_Age)  ){
                     Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }
                 else if (txt_password.length()<6){
@@ -138,7 +140,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please Recheck your Password", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    register(txt_username,txt_email,txt_password,txt_Age,txt_Locality,txt_City,txt_Pincode,txt_BloodGroup,txt_Gender);
+                    register(txt_username,txt_email,txt_password,txt_Age,txt_Locality,txt_City,txt_State, txt_Pincode,txt_BloodGroup,txt_Gender);
                 }
             }
         });
@@ -394,7 +396,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void register(final String username, final String email, final String password, final String age, final String locality, final String city, final String pincode, final String bloodgroup, final String gender) {
+    private void register(final String username, final String email, final String password, final String age, final String locality, final String city, final String state, final String pincode, final String bloodgroup, final String gender) {
 
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -413,6 +415,11 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("Gender", gender);
                             hashMap.put("Email", email);
                             hashMap.put("Password", password);
+                            hashMap.put("Blood Group", bloodgroup);
+                            hashMap.put("Locality", locality);
+                            hashMap.put("City", city);
+                            hashMap.put("State", state);
+                            hashMap.put("Pin Code", pincode);
 
                             hashMap.put("search", username.toLowerCase());
 
