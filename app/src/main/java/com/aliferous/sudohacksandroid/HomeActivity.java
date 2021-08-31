@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
 
         plasma_donation = findViewById(R.id.PlasmaDonationPortal);
         blood_donation = findViewById(R.id.bloodDonationPortal);
+        profile = findViewById(R.id.circle2);
         chats = findViewById(R.id.circle3);
         feedback = findViewById(R.id.circle4);
 
@@ -70,6 +71,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }
         });

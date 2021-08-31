@@ -111,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
         CBRecovered.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                txt_DonorType = "Plasma";
+                txt_DonorType = "Plasma Donor";
                 CBPositive.setChecked(false);
                 CBFree.setChecked(false);
                 return false;
@@ -121,7 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
         CBFree.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                txt_DonorType = "Blood";
+                txt_DonorType = "Blood Donor";
                 CBRecovered.setChecked(false);
                 CBPositive.setChecked(false);
                 return false;
@@ -180,7 +180,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please Recheck your Password", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    register(txt_username, txt_email, txt_password, txt_Age, txt_Locality, txt_City, txt_State, txt_Pincode, txt_BloodGroup, txt_Gender, txt_DonorType);
+                    register(txt_username, txt_email, txt_password,txt_phone, txt_Age, txt_Locality, txt_City, txt_State, txt_Pincode, txt_BloodGroup, txt_Gender, txt_DonorType);
                 }
             }
         });
@@ -436,7 +436,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void register(final String username, final String email, final String password, final String age, final String locality, final String city, final String state, final String pincode, final String bloodgroup, final String gender, final String donorType) {
+    private void register(final String username, final String email, final String password, final String phone, final String age, final String locality, final String city, final String state, final String pincode, final String bloodgroup, final String gender, final String donorType) {
 
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -455,12 +455,13 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("gender", gender);
                             hashMap.put("email", email);
                             hashMap.put("password", password);
+                            hashMap.put("phone", password);
                             hashMap.put("blood", bloodgroup);
                             hashMap.put("locality", locality);
                             hashMap.put("city", city);
                             hashMap.put("state", state);
                             hashMap.put("pin", pincode);
-                            hashMap.put("Donor Type", donorType);
+                            hashMap.put("DonorType", donorType);
 
                             hashMap.put("search", username.toLowerCase());
 
