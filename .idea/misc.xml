@@ -5,6 +5,12 @@
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.425" />
         <entry key="app/src/main/res/drawable/input_design.xml" value="0.26907894736842103" />
+        <entry key="app/src/main/res/drawable/vector_chats.xml" value="0.27635135135135136" />
+        <entry key="app/src/main/res/drawable/vector_circle.xml" value="0.27635135135135136" />
+        <entry key="app/src/main/res/drawable/vector_donation.xml" value="0.27635135135135136" />
+        <entry key="app/src/main/res/drawable/vector_feedback.xml" value="0.27635135135135136" />
+        <entry key="app/src/main/res/drawable/vector_logout.xml" value="0.27635135135135136" />
+        <entry key="app/src/main/res/drawable/vector_profile.xml" value="0.27635135135135136" />
         <entry key="app/src/main/res/layout/activity_blood.xml" value="0.2588815789473684" />
         <entry key="app/src/main/res/layout/activity_chats.xml" value="0.2588815789473684" />
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.2588815789473684" />
