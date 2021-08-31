@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,8 +30,18 @@ public class ProfileActivity extends AppCompatActivity {
 
     String txt_Phone, txt_Age, txt_DonorType;
 
+    ImageView donate,profile,feedback,chats;
     FirebaseUser firebaseUser;
     DatabaseReference dbr;
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
+
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -45,6 +56,42 @@ public class ProfileActivity extends AppCompatActivity {
         Recovered = findViewById(R.id.profile_CB_Recovered);
         Free = findViewById(R.id.profile_CB_Free);
 
+        donate = findViewById(R.id.circle1);
+        profile = findViewById(R.id.circle2);
+        chats = findViewById(R.id.circle3);
+        feedback = findViewById(R.id.circle4);
+
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, ChatsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProfileActivity.this, DonateActivity.class);
+                startActivity(intent);
+            }
+        });
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         final String userid = firebaseUser.getUid();
@@ -131,7 +178,7 @@ public class ProfileActivity extends AppCompatActivity {
                 dbr.child("DonorType").setValue(txt_DonorType);
 
                 Toast.makeText(ProfileActivity.this, "All Changes Have Been Updated", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
                 startActivity(intent);
 
             }

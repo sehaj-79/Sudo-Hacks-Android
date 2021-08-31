@@ -28,7 +28,14 @@ public class HomeActivity extends AppCompatActivity {
     ImageView logout,donate,profile,feedback,chats;
     String txt;
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -39,33 +46,18 @@ public class HomeActivity extends AppCompatActivity {
 
         plasma_donation = findViewById(R.id.PlasmaDonationPortal);
         blood_donation = findViewById(R.id.bloodDonationPortal);
+        donate = findViewById(R.id.circle1);
         profile = findViewById(R.id.circle2);
         chats = findViewById(R.id.circle3);
         feedback = findViewById(R.id.circle4);
 
-        plasma_donation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, PlasmaActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        blood_donation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, BloodActivity.class);
-                startActivity(intent);
-            }
-        });
-
         chats.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  Intent intent = new Intent(HomeActivity.this, ChatsActivity.class);
-                  startActivity(intent);
-              }
-          });
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ChatsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +71,30 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        donate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, DonateActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        plasma_donation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PlasmaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        blood_donation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, BloodActivity.class);
                 startActivity(intent);
             }
         });
