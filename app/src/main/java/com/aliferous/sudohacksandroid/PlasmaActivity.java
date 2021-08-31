@@ -60,7 +60,7 @@ public class PlasmaActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
-                locality.setText(user.getLocality());
+                locality.setText("Your Location: "+user.getLocality());
             }
 
             @Override
@@ -96,7 +96,7 @@ public class PlasmaActivity extends AppCompatActivity {
 
                     if (user != null && user.getId() != null) {
                         assert firebaseUser != null;
-                        if (!user.getId().equals(firebaseUser.getUid())) {
+                        if (!user.getId().equals(firebaseUser.getUid()) && user.getDonorType().equals("Plasma Donor")) {
                             mUsers.add(user);
                         }
                     }

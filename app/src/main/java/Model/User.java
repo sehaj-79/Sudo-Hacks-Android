@@ -1,8 +1,8 @@
 package Model;
 
-public class User { private String name, gender,email,blood,locality,city,state,pin, age,id;
+public class User { private String name, gender,email,blood,locality,city,state,pin, age,id, DonorType;
 
-    public User(String name, String gender, String email, String blood, String locality, String city, String state, String pin, String age, String id) {
+    public User(String name, String gender, String email, String blood, String locality, String city, String state, String pin, String age, String id, String DonorType) {
         this.name = name;
         this.gender = gender;
         this.email = email;
@@ -13,10 +13,19 @@ public class User { private String name, gender,email,blood,locality,city,state,
         this.pin = pin;
         this.age = age;
         this.id = id;
+        this.DonorType = DonorType;
 
     }
 
     public User() {}
+
+    public String getDonorType() {
+        return DonorType;
+    }
+
+    public void setDonorType(String DonorType) {
+        DonorType = DonorType;
+    }
 
     public String getName() {
         return name;
