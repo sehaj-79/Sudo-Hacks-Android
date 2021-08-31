@@ -12,12 +12,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -41,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button Next1,Next2,Next3,Next4,Next5;
     ConstraintLayout Page1,Page2,Page3,Page4,Page5;
     TextView SignIn;
+    CheckBox CBRecovered, CBPositive, CBFree;
 
     FirebaseAuth auth;
     DatabaseReference reference;
@@ -49,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText InputName, InputPhoneNumber, InputPassword, InputEmail, InputConfirmPass, InputLocality, InputState,InputCity, InputPin , InputAge;
     private Spinner InputBlood, InputGender, CovidStatus;
     private ProgressDialog loadingBar;
-    String txt_BloodGroup,txt_Gender;
+    String txt_BloodGroup, txt_Gender, txt_DonorType;
 
     private String parentDbName = "Users", acctype= "Recipient";
     private TextView DocLink, NotDocLink;
@@ -76,6 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        CBPositive = findViewById(R.id.register_CB_Positive);
+        CBRecovered = findViewById(R.id.register_CB_Recovered);
+        CBFree = findViewById(R.id.register_CB_Free);
+
         CreateAccountButton = findViewById(R.id.page5_next);
         InputName = findViewById(R.id.register_FullName);
         InputPassword = findViewById(R.id.register_Password);
@@ -89,6 +97,38 @@ public class RegisterActivity extends AppCompatActivity {
         InputPin = findViewById(R.id.register_Pincode);
         InputAge = findViewById(R.id.register_age);
         InputGender = findViewById(R.id.register_Gender);
+
+        CBPositive.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                txt_DonorType = "None";
+                CBRecovered.setChecked(false);
+                CBFree.setChecked(false);
+                return false;
+            }
+        });
+
+        CBRecovered.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                txt_DonorType = "Plasma";
+                CBPositive.setChecked(false);
+                CBFree.setChecked(false);
+                return false;
+            }
+        });
+
+        CBFree.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                txt_DonorType = "Blood";
+                CBRecovered.setChecked(false);
+                CBPositive.setChecked(false);
+                return false;
+            }
+        });
+
+
 
         InputBlood.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -140,7 +180,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please Recheck your Password", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    register(txt_username,txt_email,txt_password,txt_Age,txt_Locality,txt_City,txt_State, txt_Pincode,txt_BloodGroup,txt_Gender);
+                    register(txt_username, txt_email, txt_password, txt_Age, txt_Locality, txt_City, txt_State, txt_Pincode, txt_BloodGroup, txt_Gender, txt_DonorType);
                 }
             }
         });
@@ -396,7 +436,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void register(final String username, final String email, final String password, final String age, final String locality, final String city, final String state, final String pincode, final String bloodgroup, final String gender) {
+    private void register(final String username, final String email, final String password, final String age, final String locality, final String city, final String state, final String pincode, final String bloodgroup, final String gender, final String donorType) {
 
         auth.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -420,6 +460,7 @@ public class RegisterActivity extends AppCompatActivity {
                             hashMap.put("City", city);
                             hashMap.put("State", state);
                             hashMap.put("Pin Code", pincode);
+                            hashMap.put("Donor Type", donorType);
 
                             hashMap.put("search", username.toLowerCase());
 

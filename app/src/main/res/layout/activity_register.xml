@@ -83,7 +83,7 @@
             android:id="@+id/register_page1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -308,49 +308,85 @@
             android:id="@+id/register_page3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintVertical_bias="0.30">
 
-            <Spinner
+            <TextView
                 android:id="@+id/register_CovidPositive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/vector_edittext"
-                android:entries="@array/CovidPositive"
+                android:text="Covid Positive"
+                android:paddingStart="22dp"
+                android:paddingTop="12.5dp"
+                android:textColor="#454545"
+                android:textSize="15dp"
                 android:fontFamily="@font/helveticaneue"
-                android:paddingStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Spinner
+            <TextView
                 android:id="@+id/register_CovidRecovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/vector_edittext"
-                android:entries="@array/CovidRecovered"
+                android:text="Covid Recovered"
+                android:paddingStart="22dp"
+                android:paddingTop="12.5dp"
+                android:textColor="#454545"
+                android:textSize="15dp"
                 android:fontFamily="@font/helveticaneue"
-                android:paddingStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/register_CovidPositive" />
 
-            <Spinner
+            <TextView
                 android:id="@+id/register_CovidFree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:background="@drawable/vector_edittext"
-                android:entries="@array/CovidFree"
+                android:text="Covid Free"
+                android:paddingStart="22dp"
+                android:paddingTop="12.5dp"
+                android:textColor="#454545"
+                android:textSize="15dp"
                 android:fontFamily="@font/helveticaneue"
-                android:paddingStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/register_CovidRecovered" />
+
+            <CheckBox
+                android:id="@+id/register_CB_Positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/register_CovidPositive"
+                app:layout_constraintEnd_toEndOf="@+id/register_CovidPositive"
+                app:layout_constraintTop_toTopOf="@+id/register_CovidPositive" />
+
+            <CheckBox
+                android:id="@+id/register_CB_Recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/register_CovidRecovered"
+                app:layout_constraintEnd_toEndOf="@+id/register_CovidRecovered"
+                app:layout_constraintTop_toTopOf="@+id/register_CovidRecovered" />
+
+            <CheckBox
+                android:id="@+id/register_CB_Free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/register_CovidFree"
+                app:layout_constraintEnd_toEndOf="@+id/register_CovidFree"
+                app:layout_constraintTop_toTopOf="@+id/register_CovidFree" />
 
             <LinearLayout
                 android:id="@+id/linearlayout3"
