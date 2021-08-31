@@ -25,7 +25,7 @@ import io.paperdb.Paper;
 public class HomeActivity extends AppCompatActivity {
 
     Button plasma_donation,blood_donation;
-    ImageView logout,donate,profile,feedback,chats;
+    ImageView logout,donate,profile,feedback,chats,logo;
     String txt;
 
     @Override
@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
+        logo = findViewById(R.id.imageView3);
         plasma_donation = findViewById(R.id.PlasmaDonationPortal);
         blood_donation = findViewById(R.id.bloodDonationPortal);
         donate = findViewById(R.id.circle1);
@@ -79,6 +80,14 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, DonateActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
