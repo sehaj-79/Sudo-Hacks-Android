@@ -18,6 +18,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -49,11 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth auth;
     DatabaseReference reference;
 
-    private Button CreateAccountButton;
-    private EditText InputName, InputPhoneNumber, InputPassword, InputEmail, InputConfirmPass, InputLocality, InputState,InputCity, InputPin , InputAge;
-    private Spinner InputBlood, InputGender, CovidStatus;
-    private ProgressDialog loadingBar;
-    String txt_BloodGroup, txt_Gender, txt_DonorType;
+    Button CreateAccountButton;
+    EditText InputName, InputPhoneNumber, InputPassword, InputEmail, InputConfirmPass, InputLocality,  InputPin , InputAge;
+    Spinner InputBlood, InputGender, InputCity, InputState;
+    String txt_BloodGroup, txt_Gender, txt_DonorType, txt_State, txt_City;
 
     private String parentDbName = "Users", acctype= "Recipient";
     private TextView DocLink, NotDocLink;
@@ -154,6 +154,35 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
+        InputState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                txt_State = adapterView.getSelectedItem().toString();
+                SetDistrictSpinner();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        InputCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                txt_City = adapterView.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
+
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,14 +192,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_password = InputPassword.getText().toString();
                 String txt_cpassword = InputConfirmPass.getText().toString();
                 String txt_Locality = InputLocality.getText().toString();
-                String txt_City = InputCity.getText().toString();
-                String txt_State = InputState.getText().toString();
                 String txt_Pincode = InputPin.getText().toString();
                 String txt_Age = InputAge.getText().toString();
 
 
 
-                if(TextUtils.isEmpty(txt_username)  ||  TextUtils.isEmpty(txt_password)  ||  TextUtils.isEmpty(txt_email)  ||  TextUtils.isEmpty(txt_phone)  ||  TextUtils.isEmpty(txt_Locality)  ||  TextUtils.isEmpty(txt_City)   ||  TextUtils.isEmpty(txt_Pincode)  ||  TextUtils.isEmpty(txt_Age)  ){
+                if(TextUtils.isEmpty(txt_username)  ||  TextUtils.isEmpty(txt_password)  ||  TextUtils.isEmpty(txt_email)  ||  TextUtils.isEmpty(txt_phone)  ||  TextUtils.isEmpty(txt_Locality)   ||  TextUtils.isEmpty(txt_Pincode)  ||  TextUtils.isEmpty(txt_Age)  ){
                     Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
                 }
                 else if (txt_password.length()<6){
@@ -481,6 +508,129 @@ public class RegisterActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    public void SetDistrictSpinner(){
+
+        ArrayAdapter<String> spinnerArrayAdapter;
+        switch (txt_State){
+            case "Select Your State" : spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_default_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Andhra Pradesh" :  spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_andhra_pradesh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Arunachal Pradesh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_arunachal_pradesh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Assam": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_assam_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Bihar": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_bihar_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Chhattisgarh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_chhattisgarh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Goa": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_goa_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Gujarat": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_gujarat_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Haryana": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_haryana_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Himachal Pradesh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_himachal_pradesh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Jharkhand": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_jharkhand_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Karnataka": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_karnataka_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Kerala": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_kerala_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Madhya Pradesh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_madhya_pradesh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Maharashtra": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_maharashtra_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Manipur": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_manipur_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Meghalaya": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_meghalaya_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Mizoram": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_mizoram_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Nagaland": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_nagaland_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Odisha": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_odisha_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Punjab": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_punjab_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Rajasthan": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_rajasthan_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Sikkim": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_sikkim_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Tamil Nadu": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_tamil_nadu_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Telangana": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_telangana_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Tripura": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_tripura_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Uttar Pradesh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_uttar_pradesh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Uttarakhand": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_uttarakhand_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "West Bengal": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_west_bengal_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Andaman and Nicobar Islands": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_andaman_nicobar_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Chandigarh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_chandigarh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Dadra and Nagar Haveli": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_dadra_nagar_haveli_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Daman and Diu": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_daman_diu_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Delhi": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_delhi_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Jammu and Kashmir": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_jammu_kashmir_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Lakshadweep": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_lakshadweep_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Ladakh": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_ladakh_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            case "Puducherry": spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array_puducherry_districts));
+                InputCity.setAdapter(spinnerArrayAdapter);
+                break;
+            default:  break;
+        }
+
     }
 
 }
