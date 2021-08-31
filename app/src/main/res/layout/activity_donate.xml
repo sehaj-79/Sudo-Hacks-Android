@@ -219,8 +219,33 @@
             app:layout_constraintTop_toTopOf="@+id/circle4" />
 
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="17dp"
+        app:layout_constraintVertical_bias="0.3"
+        android:text="Team Project RED is trying its level best to save lives by connecting donors and patients but we can't do it without your help.\nAs our user base is increasing exponentially due to which our maintenance and database cost are also increasing.\nIf you support our iniviative, do Donate.\nThank You"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donatenow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/btn_donatenow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:background="@drawable/vector_buttonbg"
+        android:text="DOnate Now"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
