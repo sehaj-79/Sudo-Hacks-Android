@@ -45,6 +45,7 @@ public class BloodActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
 
+    String Bloodgroup;
 
 
 
@@ -74,6 +75,7 @@ public class BloodActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 assert user != null;
+                Bloodgroup = (user.getBlood());
                 locality.setText("Your Location: "+user.getLocality());
             }
 
@@ -110,7 +112,7 @@ public class BloodActivity extends AppCompatActivity {
 
                         if (user != null && user.getId() != null) {
                             assert firebaseUser != null;
-                            if (!user.getId().equals(firebaseUser.getUid()) && user.getDonorType().equals("Blood Donor") || user.getDonorType().equals("Plasma Donor")) {
+                            if (!user.getId().equals(firebaseUser.getUid()) && (user.getDonorType().equals("Blood Donor") || user.getDonorType().equals("Plasma Donor")) && user.getBlood().equals(Bloodgroup)) {
                                 mUsers.add(user);
                             }
                         }

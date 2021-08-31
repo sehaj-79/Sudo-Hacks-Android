@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.SudoHacksAndroid" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#EFE5DA</item>
-        <item name="colorPrimaryVariant">#EFE5DA</item>
+        <item name="colorPrimary">#EBDBC6</item>
+        <item name="colorPrimaryVariant">#EBDBC6</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
