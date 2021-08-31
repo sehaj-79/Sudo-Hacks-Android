@@ -451,15 +451,15 @@ public class RegisterActivity extends AppCompatActivity {
 
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
-                            hashMap.put("Name", username);
-                            hashMap.put("Gender", gender);
-                            hashMap.put("Email", email);
-                            hashMap.put("Password", password);
-                            hashMap.put("Blood Group", bloodgroup);
-                            hashMap.put("Locality", locality);
-                            hashMap.put("City", city);
-                            hashMap.put("State", state);
-                            hashMap.put("Pin Code", pincode);
+                            hashMap.put("name", username);
+                            hashMap.put("gender", gender);
+                            hashMap.put("email", email);
+                            hashMap.put("password", password);
+                            hashMap.put("blood", bloodgroup);
+                            hashMap.put("locality", locality);
+                            hashMap.put("city", city);
+                            hashMap.put("state", state);
+                            hashMap.put("pin", pincode);
                             hashMap.put("Donor Type", donorType);
 
                             hashMap.put("search", username.toLowerCase());
